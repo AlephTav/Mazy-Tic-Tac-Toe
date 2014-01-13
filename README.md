@@ -39,4 +39,4 @@ Rules of Play
 
 NOTE: If a player is sent to a big square in which all the cells are already
 filled, then the player may next place his mark in any unfilled cell in any
-other big squares
+other big squares.
