@@ -1,7 +1,7 @@
 Mazy Tic-Tac-Toe
 ================
 
-Mazy Tic-Tac-Toe is the spin off of Ultimate Tic-Tac-Toe
+Mazy Tic-Tac-Toe is spin off of the Ultimate Tic-Tac-Toe
 (http://mathwithbaddrawings.com/2013/06/16/ultimate-tic-tac-toe) with the only
 difference in the winning condition (or losing).
 
