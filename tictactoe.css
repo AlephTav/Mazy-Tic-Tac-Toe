@@ -1,0 +1,15 @@
+body{background:#333;color:#fff;font:300 100.1% "Helvetica Neue",Helvetica,"Arial Unicode MS",Arial,sans-serif;}
+h1{text-align:center;z-index:1000;top:0;left:50%;margin-left:-132px;position:absolute;}
+select{width:350px;}
+table{width:100%;}
+td{height:24px;}
+.canvas{margin:0 auto;margin-top:82px;text-align:center;}
+.shadow{background-color:#000000;height:100%;width:100%;left:0;top:0;opacity:0.5;position:fixed;z-index:99;}
+.popup{background-color:#000000;height:200px;width:600px;left:50%;top:50%;position:fixed;z-index:100;margin-left:-300px;margin-top:-100px;opacity:0.8;}
+.popup .container{margin:50px;}
+.popup .message{margin:50px;text-align:center;font-size:24px;}
+.center{text-align:center;padding-top:18px;}
+.help{z-index:1000;}
+.manual{z-index:1000;position:absolute;top:66px;color:black;background-color:#ffffff;padding:10px 20px;-moz-border-radius:15px;border-radius:15px;border: 10px solid #8B4513;}
+.manual label{font-weight:bold;}
+.stop{text-decoration:none;color:white;font-size:10px;}
