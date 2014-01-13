@@ -37,8 +37,6 @@ Rules of Play
     cell within the big square dictated by the cell position marked by the
     previous player.
 
-
-
-[^]: If a player is sent to a big square in which all the cells are already
+NOTE: If a player is sent to a big square in which all the cells are already
 filled, then the player may next place his mark in any unfilled cell in any
 other big squares
