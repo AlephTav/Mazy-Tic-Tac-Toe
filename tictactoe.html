@@ -13,7 +13,7 @@
  <p><label>About Game:</label><br />Mazy Tic-Tac-Toe is a 2-player computer game played on a game board comprising nine tic-tac-toe games consisting of nine cells within a 3x3 big square. Thus, there are 81 cells, arranged in nine 3x3 big square within the board.</p>
  <p><label>Objective:</label><br />The objective of this game is to be the first to win tic-tac-toe game within any big square.<p>
  <p><label>Rules of Play:</label><br />1. The first player may place an "X" in any cell within any big square of the board.<br />2. The selected cell position within this big square corresponds to the big square where the second player must then place an "O".<br />3. Thereafter, the two players take turns placing their mark in any unfilled cell within the big square dictated by the cell position marked by the previous player.<br /></p>
- <p><label>Notes:</label><br />a. If a player is sent to a big square in which all the cells are already filled, then the player may next place his mark in any unfilled cell in any other big squares.<br />b. If you want to interrupt the current game or to start a new game you must press ESC or click "STOP THE GAME" beneath the game board.</p>
+ <p><label>Notes:</label><br />a. If a player is sent to a big square in which all the cells are already filled, then the player may next place his mark in any unfilled cell in any other big squares.<br />b. If you want to interrupt the current game or to start a new game you must press ESC or click "STOP THE GAME" beneath the game board.<br />c. The game mode "evolution" allows you to workout AI of your computer opponent. Just reach the population number about 300-400 to get the optimal computer AI.</p>
 </div>
 <div id="popup" class="popup">
   <div class="container">
@@ -47,6 +47,7 @@
             <option value="1">Human vs Computer (Computer goes first)</option>
             <option value="2">Human vs Human</option>
             <option value="3">Computer vs Computer</option>
+            <option value="4">Evolution</option>
           </select>
         </td>
       </tr>
@@ -61,79 +62,18 @@
    <button id="no">No</button>
  </div>
 </div>
+<div id="evolution" class="popup" style="display:none;">
+  <div id="msg1" class="message">Population number: <span id="population"></span></div>
+  <div id="msg2" class="message" style="display:none;">Are you sure you want to reset the evolution process?</div>
+  <div class="center">
+    <button id="resetYes" style="display:none;" class="reset">Yes</button>
+    <button id="resetNo" style="display:none;" class="reset">No</button>
+    <button id="reset" class="reset">Reset the evolution process to initial state</button><br />
+    <button id="apply">Apply the last evolved bot logic</button>
+    <button id="restore">Restore the default bot logic</button>
+  </div>
+</div>
 <div id="canvas" class="canvas"><a id="stop" href="javascript:;" class="stop" style="display:none;">STOP THE GAME</a></div>
-<script type="text/javascript">
-function calculateHeight()
-{
-  var height;
-  if (window.opera || typeof navigator.taintEnabled == 'undefined') height = window.innerHeight;
-  else height = (!document.compatMode || document.compatMode == 'CSS1Compat' ? document.documentElement : document.body).clientHeight;
-  height *= 0.8299;
-  document.getElementById('canvas').style.height = height + 'px';
-  document.getElementById('canvas').style.width = height + 'px';
-  return height;
-}
-document.getElementById('help').onmouseover = function()
-{
-  var width;
-  if (window.opera || typeof navigator.taintEnabled == 'undefined') width = window.innerWidth;
-  else width = (!document.compatMode || document.compatMode == 'CSS1Compat' ? document.documentElement : document.body).clientWidth;
-  width -= 65;
-  var el = document.getElementById('manual');
-  el.style.display = 'block';
-  el.style.width = (width / 2) + 'px';
-  el.style.left = (width / 4) + 'px';
-};
-document.getElementById('help').onmouseout = function()
-{
-  document.getElementById('manual').style.display = 'none';
-};
-document.getElementById('start').onclick = function()
-{
-  document.getElementById('shadow').style.display = 'none';
-  document.getElementById('popup').style.display = 'none';
-  document.getElementById('stop').style.display = 'block';
-  ttt.game.showMoveNumbers = document.getElementById('moveNumbers').value;
-  ttt.game.difficulty = document.getElementById('difficulty').value;
-  ttt.start(document.getElementById('mode').value);
-};
-window.onresize = function()
-{
-  ttt.game.board.resize(calculateHeight());
-}
-document.body.onkeyup = function(e)
-{
-  if ((e || event).keyCode == 27 && document.getElementById('shadow').style.display == 'none') interrupt();
-};
-document.getElementById('stop').onclick = interrupt;
-function interrupt(e)
-{
-  document.getElementById('shadow').style.display = 'block';
-  if (ttt.game.inGame())
-  {
-    document.getElementById('dialog').style.display = 'block';
-    document.getElementById('yes').focus();
-    document.getElementById('no').onclick = function()
-    {
-      document.getElementById('dialog').style.display = 'none';
-      document.getElementById('shadow').style.display = 'none';
-    };
-    document.getElementById('yes').onclick = function()
-    {
-      document.getElementById('stop').style.display = 'none';
-      document.getElementById('dialog').style.display = 'none';
-      document.getElementById('popup').style.display = 'block';
-      ttt.stop();
-    };
-  }
-  else
-  {
-    document.getElementById('popup').style.display = 'block';
-    document.getElementById('stop').style.display = 'none';
-    ttt.stop();
-  }
-}
-var ttt = new TicTacToe('canvas', calculateHeight());
-</script>
+<script src="init-min.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

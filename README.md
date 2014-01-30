@@ -40,3 +40,11 @@ Rules of Play
 NOTE: If a player is sent to a big square in which all the cells are already
 filled, then the player may next place his mark in any unfilled cell in any
 other big squares.
+
+
+
+Browser support
+---------------
+
+Mazy Tic-Tac-Toe works good on all versions of Google Chrome, Safari v4.0+,
+Firefox v3.5+, IE 10.0+, Opera 10.6+.

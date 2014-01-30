@@ -13,3 +13,6 @@ td{height:24px;}
 .manual{z-index:1000;position:absolute;top:66px;color:black;background-color:#ffffff;padding:10px 20px;-moz-border-radius:15px;border-radius:15px;border: 10px solid #8B4513;}
 .manual label{font-weight:bold;}
 .stop{text-decoration:none;color:white;font-size:10px;}
+.reset{margin-bottom:5px;}
+.success{color:#006400;border:2px solid #483D8B;background-color:#87CEFA;font-weight:bold;}
+#evolution .message{margin-bottom:20px;}
